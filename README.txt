@@ -3,6 +3,28 @@ Crossover - Chief Software Architect PHP - Final assignment
 
 
 
+Assignment description
+Work done
+Online version
+Installation instructions
+Running Tests
+
+
+
+Assignment description
+----------------------
+
+(complete this)
+
+
+
+Work done
+---------
+
+(complete this)
+
+
+
 Online version
 --------------
 
@@ -12,8 +34,8 @@ You can see the site in action in:
 
 
 
-Installation insructions
-------------------------
+Installation instructions
+-------------------------
 
 1) Uncompress the ZIP file and move the contents of /Code into a folder called
    "crossover" in your web server's path,
@@ -59,3 +81,14 @@ Installation insructions
 
 9) You can see a demo video on the /Video folder and or online at:
    http://crossover_video.ip1.cc
+
+Running Tests
+-------------
+
+You can run the tests on Linux with the following command:
+
+    ./vendor/bin/phpunit
+
+
+
+
