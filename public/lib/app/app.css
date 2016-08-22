@@ -1,0 +1,46 @@
+body {
+    font-family: 'Lato';
+}
+.fa-btn {
+    margin-right: 6px;
+}
+.row-spacing {
+  margin-top: 15px;
+}
+ng-map {
+  position:absolute;
+  width: 100%;
+  height: 100%;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/* HALL MAPS */
+#stands polygon, #stands rect, #stands path {
+  fill: orange;
+  cursor: pointer;
+  stroke: grey;
+  stroke-width: 1;
+}
+#stands polygon.status-reserved, #stands rect.status-reserved, #stands path.status-reserved {
+  fill: mediumblue;
+  cursor: default;
+}
+#stands polygon:hover, #stands rect:hover, #stands path:hover{
+  fill: yellow;
+}
+#stands polygon.status-reserved:hover, #stands rect.status-reserved:hover, #stands path.status-reserved:hover {
+  fill: lightblue;
+}
+
+/* /HALL MAPS */
+.stand-company-logo
+{
+  max-height: 150px;
+  max-width: 150px;
+}
+.stand-picture
+{
+  max-height: 150px;
+}

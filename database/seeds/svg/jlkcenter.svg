@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 600">
+	<g id="ground">
+		<rect id="background" fill="#eee" width="800" height="600"></rect>
+		<g id="parking">
+			<path fill="#fff" d="M287.5 340c0 5.5-3.182 13.182-7.071 17.071l-39.857 39.857C236.682 400.818 229 404 223.5 404h-142c-5.5 0-10-4.5-10-10v-88c0-5.5 4.5-10 10-10h124c5.5 0 10-4.05 10-9s4.5-9 10-9h34c5.5 0 13.182 3.182 17.071 7.071l3.857 3.857c3.889 3.889 7.071 11.571 7.071 17.071V340z"></path>
+			<path fill="none" stroke="#ddd" stroke-width="0.5" d="M287.5 340c0 5.5-3.182 13.182-7.071 17.071l-39.857 39.857C236.682 400.818 229 404 223.5 404h-142c-5.5 0-10-4.5-10-10v-88c0-5.5 4.5-10 10-10h124c5.5 0 10-4.05 10-9s4.5-9 10-9h34c5.5 0 13.182 3.182 17.071 7.071l3.857 3.857c3.889 3.889 7.071 11.571 7.071 17.071V340z"></path>
+		</g>
+		<polygon fill="#E4E4E4" points="759.13,106.909 712,106.909 712,139.234 754.63,139.197 759.13,145.106 759.13,219.769 638.08,219.769 633.58,213.86 677,145.147 677.999,106.909 637.08,106.909 632.58,101 754.63,0 759.13,0"></polygon>
+		<polygon fill="#F4F4F4" points="754.63,101 707.5,101 707.5,139.238 754.63,139.197 754.63,213.86 633.58,213.86 633.524,139.238 672.5,139.238 673.499,101 632.58,101 593.5,0 754.63,0  "></polygon>
+		<polygon fill="#E4E4E4" points="227.531,565.469 35.091,565.242 30.091,557.242 229.909,487.278 234.909,495.278"></polygon>
+		<polygon fill="#F4F4F4" points="222.531,557.469 30.091,557.242 30.466,438.53 190.749,438.92 229.909,487.278"></polygon>
+		<polygon fill="#fff" stroke="#DDDCDC" stroke-width="0.5" points="800,345.755 566.5,600 632.96,600 800,413"></polygon>
+		<polygon id="road_1_" fill="#fff" stroke="#ddd" stroke-width="0.5" points="402.5,600 214.833,404 198.5,404 385.5,600"></polygon>
+	</g>
+	<g id="fund">
+		<path display="none" fill="#E4E4E4" d="M425.5 498l54-54h36l36 36h63l27-27v-63l-90-90c0 0 0-54 0-99s-36-72-72-72h-9l-54-54h-63l-36 36h-126V93h-117v180h117v-18h99l36 36v72l-63 63 72 72H425.5z"></path>
+		<path fill="#E4E4E4" d="M425.5 499l54-54h36l36 36h63l27-27v-63l-90-90c0 0 0-54 0-99s-36-72-72-72h-9l-54-54h-63l-36 36h-126V94h-117v180h117v-18h99l36 36v72l-63 63 72 72H425.5z"></path>
+		<path fill="#fff" d="M422.5 494l54-54h36l36 36h63l27-27v-63l-90-90c0 0 0-54 0-99s-36-72-72-72h-9l-54-54h-63l-36 36h-126V89h-117v180h117v-18h99l36 36v72l-63 63 72 72H422.5z"></path>
+	</g>
+
+  <rect x="528.636" y="359.772" fill="lightgrey" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -106.6994 487.4048)" width="12.728" height="25.456"></rect>
+  <rect x="542.136" y="379.636" fill="lightgrey" transform="matrix(0.7071 0.7071 -0.7071 0.7071 433.5952 -274.7913)" width="12.728" height="12.728"></rect>
+  <rect x="506.136" y="343.636" fill="lightgrey" transform="matrix(0.7071 0.7071 -0.7071 0.7071 397.5952 -259.8796)" width="12.728" height="12.728"></rect>
+  <rect x="515.136" y="352.636" fill="lightgrey" transform="matrix(0.7071 0.7071 -0.7071 0.7071 406.5952 -263.6075)" width="12.728" height="12.728"></rect>
+
+	<g id="stands">
+			<polygon data-id="1" points="242.5,188 215.5,188 197.5,206 197.5,251 242.5,251"></polygon>
+      <polygon data-id="2" points="512.5,251 503.5,242 467.5,278 467.5,287 512.5,287"></polygon>
+      <polygon data-id="3" points="458.5,458 422.5,494 386.5,494 386.498,457.998 386.5,422 404.5,404"></polygon>
+			<rect data-id="4" x="242.5" y="107" width="36" height="63"></rect>
+			<polygon data-id="4" points="350.5,422 305.5,377 323.5,359 413.5,359"></polygon>
+			<polygon data-id="5" points="476.5,440 494.5,422 458.5,386 485.501,359.002 539.5,413 512.5,440"></polygon>
+			<polygon data-id="7" points="395.5,89 395.5,116 440.5,116 449.5,107 431.5,89"></polygon>
+			<rect data-id="9" x="531.272" y="299.408" transform="matrix(0.7071 0.7071 -0.7071 0.7071 384.5474 -291.3796)" width="25.456" height="38.184"></rect>
+			<rect data-id="10" x="549.272" y="317.408" transform="matrix(0.7071 0.7071 -0.7071 0.7071 402.5474 -298.8354)" width="25.456" height="38.184"></rect>
+			<rect data-id="11" x="260.5" y="188" width="27" height="36"></rect>
+			<polygon data-id="12" fill="#BCBCBC" stroke="#fff" stroke-width="0.5" points="638.5,449 629.5,449 620.5,440     638.5,422   "></polygon>
+			<polygon data-id="13" fill="#bbb" stroke="#fff" stroke-width="0.5" points="512.5,287 512.5,251 530.5,269     530.5,287   "></polygon>
+			<rect data-id="14" x="530.5" y="269" fill="#bbb" stroke="#fff" stroke-width="0.5" width="18" height="18"></rect>
+      <polygon data-id="15" points="242.5,107 188.5,107 188.5,143 215.5,170 242.5,170"></polygon>
+			<polygon data-id="16" points="467.5,287 548.5,287 548.5,296 521.5,323 503.5,323 467.5,287"></polygon>
+      <polygon data-id="17" points="350.5,71 314.5,107 314.5,170 332.5,170 368.5,134 368.5,71"></polygon>
+      <polygon data-id="18" points="440.5,170 395.5,215 440.5,260 458.501,260 494.5,224"></polygon>
+      <polygon data-id="19" points="413.5,359 323.5,359 323.5,287 422.5,287 422.5,296 413.5,305"></polygon>
+			<polygon data-id="20" points="260.5,224 260.5,188 242.5,188 242.5,251 287.5,251 287.5,224"></polygon>
+			<polygon data-id="21" points="566.5,422 530.5,458 512.5,440 539.5,413 557.5,413"></polygon>
+			<polygon data-id="22" points="422.5,161 395.5,134 395.5,116 440.5,116 440.5,143"></polygon>
+			<polygon data-id="23" points="593.5,413 575.5,395 575.5,377 602.5,350 620.5,368 602.5,386 611.5,395"></polygon>
+			<rect data-id="24" x="567.272" y="335.408" transform="matrix(0.7071 0.7071 -0.7071 0.7071 420.5474 -306.2913)" width="25.456" height="38.184"></rect>
+      <rect data-id="25" x="411.316" y="387.544" transform="matrix(0.7071 0.7071 -0.7071 0.7071 423.6906 -196.8796)" width="76.368" height="50.912"></rect>
+			<polygon data-id="26" points="485.501,359.002 458.5,386 440.5,368 476.5,332 485.5,341"></polygon>
+			<rect data-id="27" x="278.5" y="107" width="36" height="63"></rect>
+			<rect data-id="28" x="544.772" y="423.544" transform="matrix(0.7071 0.7071 -0.7071 0.7071 480.7789 -262.703)" width="25.456" height="50.912"></rect>
+			<polygon data-id="29" points="449.5,179 440.5,170 449.5,161 467.5,161"></polygon>
+			<rect data-id="30" x="456.636" y="161.772" transform="matrix(0.7071 0.7071 -0.7071 0.7071 258.9997 -276.2806)" width="12.728" height="25.456"></rect>
+      <rect data-id="31" x="465.636" y="170.772" transform="matrix(0.7071 0.7071 -0.7071 0.7071 267.9997 -280.0085)" width="12.728" height="25.456"></rect>
+      <rect data-id="32" x="474.636" y="179.772" transform="matrix(0.7071 0.7071 -0.7071 0.7071 276.9997 -283.7364)" width="12.728" height="25.456"></rect>
+      <polygon data-id="33" points="503.5,215 494.5,224 476.5,206 494.5,188 503.5,197"></polygon>
+			<rect data-id="34" x="530.5" y="197" width="18" height="18"></rect>
+			<rect data-id="35" x="530.5" y="215" width="18" height="18"></rect>
+      <polygon data-id="36" points="539.5,269 512.5,242 530.5,233 548.5,233 548.5,269"></polygon>
+			<polygon data-id="37" points="467.5,143 458.5,143 458.5,116 467.5,125"></polygon>
+      <polygon data-id="38" points="458.5,143 440.5,143 440.5,116 449.5,107 458.5,116"></polygon>
+      <polygon data-id="39" points="620.5,440 593.5,413 611.5,395 602.5,386 620.5,368 638.5,386 638.5,422"></polygon>
+			<polygon data-id="42" points="395.5,71 395.5,89 431.5,89 413.5,71"></polygon>
+			<polygon data-id="43" points="548.5,476 584.5,440 611.5,467 611.5,476"></polygon>
+      <rect data-id="44" x="71.5" y="89" width="117" height="180"></rect>
+      <polygon data-id="45" points="323.5,188 287.5,188 287.5,251 323.5,287 422.5,287"></polygon>
+      <polygon data-id="46" points="386.5,494 332.5,494 260.5,422 305.5,377 368.501,440.001 386.5,440 386.5,458"></polygon>
+	</g>
+</svg>

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+chmod 777 bootstrap/cache -R
+chmod 777 storage/* -R
+composer install
+
+echo ""
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+echo "!!  If you saw any error, please run this script as root.  !!"
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+echo ""
