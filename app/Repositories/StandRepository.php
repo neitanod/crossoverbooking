@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use DB;
+use App\Stand;
 
 class StandRepository
 {
@@ -24,6 +25,11 @@ class StandRepository
         $collection = collect($stands)->keyBy('id_internal');
         $collection_array = $collection->toArray();
         return $collection_array;
+    }
+    public static function findByInternalId($venue_map_id, $id_internal) {
+      return Stand::where(
+        ['venue_map_id'=> $venue_map_id, 'id_internal'=> $id_internal]
+      )->first();
     }
 
 }

@@ -16,4 +16,7 @@ class DocumentRepository
         return $collection_array;
     }
 
+    public static function find($id) {
+        return Document::find($id);
+    }
 }

@@ -3,19 +3,19 @@
 @section('content')
 <script>
   top.EVENT_ID = {{ $event_id }};
+  top.STAND_ID_INTERNAL = {{ $stand_id_internal }};
 </script>
-<div class="container" ng-app="ngEventDetails" ng-controller="EventDetailsController">
+<div class="container" ng-app="ngBookStand" ng-controller="BookStandController">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default ng-cloak">
-                <div class="panel-heading">{| event.venue |}</div>
+                <div class="panel-heading">{{ $event->name }}</div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-xs-12">
-                            <h3>{| event.map |}</h3>
-                            <h4>Select your desired location</h4>
-                            <div id="svgdata" ng-bind-html="trusted.svgdata">
-                            </div>
+                            <p>{{ $stand['status'] }}<br/></p>
+                            <h3>Stand {{ $stand['id_internal'] }}</h3>
+                            <h4>Current status: {{ $stand['status'] }}</h4>
                             <div id="stand-details" class="row row-spacing" ng-if="selected.id">
                                 <img ng-src="{{ asset('pics/stand/full/800x600/') }}/{| selected.picture |}" class="stand-picture col col-sm-4 img-responsive"/>
                                 <div ng-if="selected.status=='available'" class="col col-sm-8">
@@ -45,5 +45,5 @@
 @endsection
 
 @section('content-js')
-<script src="{{ asset('lib/app/ngEventDetails.js') }}"></script>
+<script src="{{ asset('lib/app/ngBookStand.js') }}"></script>
 @endsection
