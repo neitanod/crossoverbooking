@@ -17,4 +17,10 @@ class ApisTest extends TestCase
              ->see('{"events":');
     }
 
+    public function testEventDetails()
+    {
+        $this->visit('/API/event/1')
+             ->see('"name":');
+    }
+
 }

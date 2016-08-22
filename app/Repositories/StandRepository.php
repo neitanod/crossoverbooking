@@ -22,8 +22,8 @@ class StandRepository
           ->leftJoin('companies','stands.company_id','=','companies.id')
           ->get();
         $collection = collect($stands)->keyBy('id_internal');
-        $collection->toArray();
-        return $collection;
+        $collection_array = $collection->toArray();
+        return $collection_array;
     }
 
 }

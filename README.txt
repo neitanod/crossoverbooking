@@ -89,6 +89,8 @@ You can run the tests on Linux with the following command:
 
     ./vendor/bin/phpunit
 
-
+(*) Please run the tests with a seeded database. In the a real project
+    the tests should use a different database and seed it themselves but
+    time constraint did not gave room to evolve in that direction.
 
 

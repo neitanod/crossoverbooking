@@ -229,19 +229,19 @@ class DatabaseSeeder extends Seeder
       DB::table('documents')->insert([
         'id' => '11',
         'company_id' => '1',
-        'file' => 'samsung1.pdf',
+        'file' => 'samsung1.png',
         'title' => 'Brochure'
       ]);
       DB::table('documents')->insert([
         'id' => '12',
         'company_id' => '1',
-        'file' => 'samsung2.pdf',
+        'file' => 'samsung2.jpg',
         'title' => 'Another Brochure'
       ]);
       DB::table('documents')->insert([
         'id' => '21',
         'company_id' => '2',
-        'file' => 'apple.pdf',
+        'file' => 'apple.jpg',
         'title' => 'Our Products'
       ]);
 

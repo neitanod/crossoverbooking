@@ -27,6 +27,9 @@
                                     <div class="stand-company pull-left">
                                         Reserved by:
                                         <h3>{| selected.company |}</h3>
+                                        <div class="row row-spacing" ng-if="selected.documents">
+                                            <div class="col-xs-12" ng-repeat="doc in selected.documents"><a href="{{ URL::to('/documents/') }}/{| doc.file |}" download><i class="fa fa-file"></i> {| doc.title |}</a></div>
+                                        </div>
                                     </div>
                                         <img ng-src="{{ asset('pics/company/full/800x600/') }}/{| selected.company_logo |}" class="pull-right stand-company-logo"/>
                                 </div>
