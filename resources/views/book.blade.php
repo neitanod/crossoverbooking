@@ -116,7 +116,7 @@
                                         </a>
                                       </div>
                                       <div class="col col-xs-2">
-                                        <span class="btn btn-danger">
+                                        <span class="btn btn-danger" ng-click="remove_document(doc)">
                                           <i class="fa fa-cross"></i> delete
                                         </span>
                                       </div>
@@ -127,7 +127,7 @@
                                   </div>
                                 </div>
                                 <div class="col-xs-12 col-offset-3 row-spacing">
-                                <span class="btn btn-primary pull-right" ng-click="show_doc_uploader = true">Add a marketing document</span>
+                                <span class="btn btn-primary pull-right" ng-click="start_doc_uploader()">Add a marketing document</span>
                                 </div>
                               </div>
 

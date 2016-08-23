@@ -14,11 +14,21 @@
 
     $scope.show_doc_uploader = false;
 
+    $scope.start_doc_uploader = function(){
+      $scope.sbup_doc.reset();
+      $scope.show_doc_uploader = true;
+    };
+
     $scope.add_document = function(filename){
       $scope.res.documents.push({'filename':filename,'title':''});
       $scope.show_doc_uploader = false;
       $scope.$apply();
     };
+
+    $scope.remove_document = function(item) {
+      var index = $scope.res.documents.indexOf(item);
+      $scope.res.documents.splice(index, 1);
+    }
 
     $scope.sbup_doc = new SingleBootstrapUploader({
       'element': '#doc',
@@ -35,7 +45,6 @@
     $scope.company_logo_reset = function(){
       $scope.res.company_logo = '';
       $scope.sbup_logo.reset();
-      $scope.$apply();
     };
 
     $scope.sbup_logo = new SingleBootstrapUploader(

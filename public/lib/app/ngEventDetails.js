@@ -32,7 +32,12 @@
              console.log('ERROR');
              console.log(response);
          });
+         setTimeout($scope.highlight);
     };
+
+    $scope.highlight = function(){
+       $('#stands [data-id="'+top.location.hash.replace('#','')+'"]').css({'fill':'red'});
+    }
 
     $scope.showStands = function() {
       angular.forEach($scope.stands,function(stand, key){
@@ -40,9 +45,9 @@
       });
       $('#stands')
           .on('mouseover', '.status-available',
-          function(){ console.log($(this).attr('data-id')); })
+          function(){ /* console.log($(this).attr('data-id')); */ })
           .on('mouseover', '.status-reserved',
-          function(){ console.log($(this).attr('data-id')); })
+          function(){ /* console.log($(this).attr('data-id')); */ })
           .on('click', '.status-available',
           function(){
             $scope.selected = $scope.stands[$(this).attr('data-id')];

@@ -18,13 +18,13 @@ ng-map {
 
 /* HALL MAPS */
 #stands polygon, #stands rect, #stands path {
-  fill: orange;
+  fill: #ffce66;
   cursor: pointer;
   stroke: grey;
   stroke-width: 1;
 }
 #stands polygon.status-reserved, #stands rect.status-reserved, #stands path.status-reserved {
-  fill: mediumblue;
+  fill: #bdbdca;
   cursor: default;
 }
 #stands polygon:hover, #stands rect:hover, #stands path:hover{
