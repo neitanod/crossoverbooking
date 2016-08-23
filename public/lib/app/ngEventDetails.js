@@ -32,7 +32,8 @@
              console.log('ERROR');
              console.log(response);
          });
-         setTimeout($scope.highlight,1000);
+         var inter = setInterval($scope.highlight, 500);
+         setTimeout(function(){clearInterval(inter);},10000);
     };
 
     $scope.highlight = function(){
