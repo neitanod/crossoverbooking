@@ -90,13 +90,12 @@
       $http({
         method: 'POST',
         data: {"reservation": $scope.res},
-        url: top.APP_PATH+'/API/events/reserve'
+        url: top.APP_PATH+'/API/event/reserve'
       }).then(
          function(response){
              console.log('SUCCESS');
              console.log(response);
-             $scope.events = response.data.events;
-             //$scope.$apply();
+             top.location.href = getAppPath()+"/event/"+getEventId()+"#"+getStandIdInternal();
          },
          function(response){
              console.log('ERROR');

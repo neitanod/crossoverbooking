@@ -159,4 +159,8 @@ function getStandIdInternal(){
 function getEventId(){
   return top.EVENT_ID;
 }
+
+function getAppPath(){
+  return top.APP_PATH;
+}
 /* */
