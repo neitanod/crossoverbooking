@@ -97,6 +97,9 @@ Installation instructions
 9) You can see a demo video on the /Video folder and or online at:
    http://crossover_video.ip1.cc
 
+10) If you also want the scheduled tasks to automatically run on time on yor server (like the required task to notify users about visitors to the stand after the event is over) you must add this to your server's crontab:
+
+    * * * * * php /path/to/crossover/artisan schedule:run >> /dev/null 2>&1
 
 
 Running PHP Tests
