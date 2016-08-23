@@ -150,5 +150,7 @@
 
 @section('content-js')
 <script src="{{ asset('lib/app/ngBookStand.js') }}"></script>
+<script src="{{ asset('lib/bootstrap3-dialog-1.34.7/bootstrap-dialog.min.js') }}"></script>
+<link  href="{{ asset('lib/bootstrap3-dialog-1.34.7/bootstrap-dialog.min.css') }}" type="text/css" rel="stylesheet" />
 <script src="{{ asset('lib/single-bootstrap-uploader/SingleBootstrapUploader.js') }}"></script>
 @endsection
