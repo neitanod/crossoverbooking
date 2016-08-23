@@ -1,0 +1,11 @@
+{
+  "src_files": [
+    "public/lib/angular-1.5.0/angular.min.js",
+    "public/lib/angular-1.5.0/angular.route.min.js",
+    "public/lib/ng-map-1.17.3/ng-map.js",
+    "public/lib/angular-1.5.0/angular-mocks.js",
+    "public/lib/jquery-1.11.3/jquery-1.11.3.min.js",
+    "public/lib/app/ngEvents.js",
+    "public/lib/test/*.js"
+  ]
+}
