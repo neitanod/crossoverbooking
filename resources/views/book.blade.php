@@ -30,14 +30,14 @@
                             <div class="row">
 
                               <div class="form-group row row-spacing">
-                                <label for="f_c_logo" class="col-xs-3 col-form-label">Company logo</label>
+                                <label for="f_c_logo" class="col-xs-3 col-form-label">Company logo*</label>
                                 <div class="col-xs-9">
                                   <input id="f_c_logo" type="text" class="form-control hidden" ng-model="res.company_logo">
                                   <div id="has_logo" ng-show="res.company_logo" ng-cloak>
                                     <img ng-src="{{ URL::to('/pics/company/full/800x600') }}/{| res.company_logo |}" style="max-width: 300px">
                                     <span class="btn btn-danger" ng-click="company_logo_reset()">Change</span>
                                   </div>
-                                  <div id="needs_logo" ng-show="!res.company_logo" ng-cloak>
+                                  <div id="needs_logo" ng-show="!res.company_logo" class="{| errors.company_logo?'has-error':'' |}"  ng-cloak>
                                     @include('single_file_uploader',['id'=>'logo', 'target_uri'=>'/upload/companylogo', 'accept'=>'image/jpeg,image/png'])
                                   </div>
                                 </div>
@@ -45,38 +45,38 @@
 
                             <form method="post" id="form-reservation">
 
-                              <div class="form-group row row-spacing">
+                              <div class="form-group row row-spacing {| errors.company_name?'has-error':'' |}">
                                 <input id="f_s_id" type="hidden" ng-model="res.stand_id_internal" value="{{ $stand->id }}">
-                                <label for="f_c_name" class="col-xs-3 col-form-label">Company name</label>
+                                <label for="f_c_name" class="col-xs-3 col-form-label">Company name*</label>
                                 <div class="col-xs-9">
-                                  <input id="f_c_name" type="text" ng-model="res.company_name" value="" class="form-control" required="">
+                                  <input id="f_c_name" type="text" ng-model="res.company_name" value="" class="form-control">
                                 </div>
                               </div>
-                              <div class="form-group row">
-                                <label for="f_c_admin_name" class="col-xs-3 col-form-label">Contact person's name</label>
+                              <div class="form-group row {| errors.admin_name?'has-error':'' |}">
+                                <label for="f_c_admin_name" class="col-xs-3 col-form-label">Contact person's name*</label>
                                 <div class="col-xs-9">
                                   <input id="f_c_admin_name" type="text" ng-model="res.admin_name" value="" class="form-control">
                                 </div>
                               </div>
-                              <div class="form-group row">
-                                <label for="f_c_admin_email" class="col-xs-3 col-form-label">Contact person's email</label>
+                              <div class="form-group row {| errors.admin_email?'has-error':'' |}">
+                                <label for="f_c_admin_email" class="col-xs-3 col-form-label">Contact person's email*</label>
                                 <div class="col-xs-9">
-                                  <input id="f_c_admin_email" type="email" ng-model="res.admin_email" value="" class="form-control">
+                                  <input id="f_c_admin_email" type="text" ng-model="res.admin_email" value="" class="form-control">
                                 </div>
                               </div>
-                              <div class="form-group row">
-                                <label for="f_c_phone" class="col-xs-3 col-form-label">Company's contact phone number</label>
+                              <div class="form-group row {| errors.phone?'has-error':'' |}">
+                                <label for="f_c_phone" class="col-xs-3 col-form-label">Company's contact phone number*</label>
                                 <div class="col-xs-9">
                                   <input id="f_c_phone" type="text" ng-model="res.phone" value="" class="form-control">
                                 </div>
                               </div>
-                              <div class="form-group row">
-                                <label for="f_c_email" class="col-xs-3 col-form-label">Company's contact email address</label>
+                              <div class="form-group row {| errors.email?'has-error':'' |}">
+                                <label for="f_c_email" class="col-xs-3 col-form-label">Company's contact email address*</label>
                                 <div class="col-xs-9">
-                                  <input id="f_c_email" type="email" ng-model="res.email" value="" class="form-control">
+                                  <input id="f_c_email" type="text" ng-model="res.email" value="" class="form-control">
                                 </div>
                               </div>
-                              <div class="form-group row">
+                              <div class="form-group row"">
                                 <label for="f_c_website" class="col-xs-3 col-form-label">Company's Website URL</label>
                                 <div class="col-xs-9">
                                   <input id="f_c_website" type="text" ng-model="res.website" value="" class="form-control">
@@ -132,7 +132,7 @@
                               </div>
 
                               <div class="form-group row row-spacing">
-                                <span class='btn btn-primary btn-lg btn-large pull-right' ng-click="makeReservation()">Confirm reservation</span>
+                                <span class='btn btn-primary btn-lg btn-large pull-right' ng-click="make_reservation()">Confirm reservation</span>
                               </div>
 
                             </div>
