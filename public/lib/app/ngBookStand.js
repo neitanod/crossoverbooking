@@ -57,7 +57,36 @@
       }
     );
 
+    $scope.errors = {};
+
+    $scope.revalidate = false;
+
+    $scope.validate = function(){
+      $scope.revalidate = true;
+      $scope.errors.company_logo = !$scope.res.company_logo;
+      $scope.errors.company_name = !$scope.res.company_name;
+      $scope.errors.admin_name   = !$scope.res.admin_name;
+      $scope.errors.admin_email  = !validEmail($scope.res.admin_email);
+      $scope.errors.phone  = !$scope.res.phone;
+      $scope.errors.email  = !validEmail($scope.res.email);
+      $scope.errors.website  = !$scope.res.website;
+      $scope.errors.facebook  = !$scope.res.facebook;
+      $scope.errors.twitter  = !$scope.res.twitter;
+      //$scope.errors.documents  = !$scope.res.documents;
+      return !(
+      $scope.errors.company_logo ||
+      $scope.errors.company_name ||
+      $scope.errors.admin_name  ||
+      $scope.errors.admin_email ||
+      $scope.errors.phone  ||
+      $scope.errors.email );
+    }
+
     $scope.make_reservation = function(){
+      if(!$scope.validate()){
+        BootstrapDialog.alert('Please complete all required fields');
+        return;
+      }
       $http({
         method: 'POST',
         data: {"reservation": $scope.res},

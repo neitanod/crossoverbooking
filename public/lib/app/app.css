@@ -44,3 +44,7 @@ ng-map {
 {
   max-height: 150px;
 }
+.has-error .btn
+{
+  border: 1px solid red;
+}
