@@ -54,6 +54,20 @@ class EventsController extends Controller
     public function reserve(Request $request){
       $reservation = $request->toArray();
       $reservation = $reservation['reservation'];
+
+      $venue_map = VenueMap::where([
+        'event_id'=>$reservation['event_id'],
+      ])->first();
+
+      $stand = Stand::where([
+        'id_internal'=>$reservation['stand_id_internal'],
+        'venue_map_id'=>$venue_map['id'],
+      ])->first();
+
+      if($stand->status != 'available') {
+        return response()->json(['status'=>'error','message'=>'The stand is not available.'],403);
+      }
+
       $company = new Company();
       $company->name = $reservation['company_name'];
       $company->logo = $reservation['company_logo'];
@@ -65,6 +79,7 @@ class EventsController extends Controller
       $company->facebook = $reservation['facebook'];
       $company->twitter = $reservation['twitter'];
       $company->save();
+
       $documents = empty($reservation['documents'])?[]:$reservation['documents'];
       foreach($documents as $doc){
         $document = new Document();
@@ -73,16 +88,10 @@ class EventsController extends Controller
         $document->title = empty($doc['title'])?"Document":$doc['title'];
         $document->save();
       }
-      $venue_map = VenueMap::where([
-        'event_id'=>$reservation['event_id'],
-      ])->first();
-      $stand = Stand::where([
-        'id_internal'=>$reservation['stand_id_internal'],
-        'venue_map_id'=>$venue_map['id'],
-      ])->first();
+
       $stand->status ='reserved';
       $stand->company_id =$company->id;
       $stand->save();
-      return response()->json(['status'=>'success']);
+      return response()->json(['status'=>'success'],200);
     }
 }

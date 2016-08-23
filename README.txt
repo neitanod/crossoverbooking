@@ -92,12 +92,21 @@ Installation instructions
    php artisan migrate
    php artisan db:seed
 
-8) Visit the site's URL and see the site in action.
+8) The Google Maps service now requires a mandatory API key that is
+   protected to quota steal by referer check.  This means that you must
+   edit your etc/hosts file to include an alias of localhost called
+   localhost.ip1.cc wich complies with the *.ip1.cc rule I had to add
+   to the API key I created for this site.
+   In simple terms, your local copy of the site will have a broken Google
+   Maps implementation unless you are seeing it at the http://localhost.ip1.cc
+   simulated domain.
 
-9) You can see a demo video on the /Video folder and or online at:
+9) Visit the site's URL and see the site in action.
+
+10) You can see a demo video on the /Video folder and or online at:
    http://crossover_video.ip1.cc
 
-10) If you also want the scheduled tasks to automatically run on time on yor server (like the required task to notify users about visitors to the stand after the event is over) you must add this to your server's crontab:
+11) If you also want the scheduled tasks to automatically run on time on yor server (like the required task to notify users about visitors to the stand after the event is over) you must add this to your server's crontab:
 
     * * * * * php /path/to/crossover/artisan schedule:run >> /dev/null 2>&1
 
