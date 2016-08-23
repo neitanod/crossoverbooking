@@ -33,11 +33,13 @@
                                 <label for="f_c_logo" class="col-xs-3 col-form-label">Company logo</label>
                                 <div class="col-xs-9">
                                   <input id="f_c_logo" type="text" class="form-control hidden" ng-model="res.company_logo">
-                                  <div id="has_logo" style="display: none">
-                                    <img data-src="{{ URL::to('/pics/company/full/800x600') }}/" style="max-width: 300px">
-                                    <span class="btn btn-danger" onclick="company_logo_reset()">Change</span>
+                                  <div id="has_logo" ng-show="res.company_logo" ng-cloak>
+                                    <img ng-src="{{ URL::to('/pics/company/full/800x600') }}/{| res.company_logo |}" style="max-width: 300px">
+                                    <span class="btn btn-danger" ng-click="company_logo_reset()">Change</span>
                                   </div>
-                                  @include('single_file_uploader',['id'=>'logo', 'target_uri'=>'/upload/companylogo', 'accept'=>'image/jpeg,image/png'])
+                                  <div id="needs_logo" ng-show="!res.company_logo" ng-cloak>
+                                    @include('single_file_uploader',['id'=>'logo', 'target_uri'=>'/upload/companylogo', 'accept'=>'image/jpeg,image/png'])
+                                  </div>
                                 </div>
                               </div>
 
@@ -149,31 +151,4 @@
 @section('content-js')
 <script src="{{ asset('lib/app/ngBookStand.js') }}"></script>
 <script src="{{ asset('lib/single-bootstrap-uploader/SingleBootstrapUploader.js') }}"></script>
-<script>
-function company_logo(filename){
-  $('#has_logo img').attr({'src':
-    $('#has_logo img').attr('data-src')+filename
-  });
-  $('#has_logo').show();
-  $('#f_c_logo').val(filename).change();
-  $('#logo').hide();
-};
-function company_logo_reset(){
-  top.sbup_logo.reset();
-  $('#f_c_logo').val("");
-  $('#has_logo').hide();
-  $('#logo').show();
-};
-$(function(){
-  top.sbup_logo = new SingleBootstrapUploader(
-    {
-      'element': '#logo',
-      // 'cancel': function(){ /* */ },
-      'success': function(data){ company_logo(data.data.filename);},
-      'error': function(data){ console.log("ERROR callback called"); console.log(data);},
-      'csrf_token': $('meta[name="csrf-token"]').attr('content')
-    }
-  );
-});
-</script>
 @endsection

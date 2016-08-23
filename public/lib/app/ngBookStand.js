@@ -27,6 +27,27 @@
       'csrf_token': $('meta[name="csrf-token"]').attr('content')
     });
 
+    $scope.company_logo = function(filename){
+      $scope.res.company_logo = filename;
+      $scope.$apply();
+    };
+
+    $scope.company_logo_reset = function(){
+      $scope.res.company_logo = '';
+      $scope.sbup_logo.reset();
+      $scope.$apply();
+    };
+
+    $scope.sbup_logo = new SingleBootstrapUploader(
+      {
+        'element': '#logo',
+        // 'cancel': function(){ /* */ },
+        'success': function(data){ $scope.company_logo(data.data.filename);},
+        'error': function(data){ console.log("ERROR callback called"); console.log(data);},
+        'csrf_token': $('meta[name="csrf-token"]').attr('content')
+      }
+    );
+
     $scope.make_reservation = function(){
       $http({
         method: 'POST',

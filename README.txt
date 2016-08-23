@@ -2,26 +2,41 @@ Crossover - Chief Software Architect PHP - Final assignment
 ===========================================================
 
 
+Contents:
 
-Assignment description
-Work done
-Online version
-Installation instructions
-Running Tests
+- Assignment description
+- Work done
+- Online version
+- Installation instructions
+- Running PHP Tests
+- Running Angular Tests
 
 
 
 Assignment description
 ----------------------
 
-(complete this)
+The Chief Software Architect PHP second assignment requests the design and
+development of a modern and responsive PHP+Javascript application.
+
+It consists of a Site's home page that offers the upcoming conventions and expositions on a map.
 
 
 
 Work done
 ---------
 
-(complete this)
+The solution developed integrates several packages and web technologies:
+
+ - Laravel framework 5.2
+ - AngularJS 1.5
+ - Bootstrap CSS Framework
+ - jQuery
+ - Google Maps service
+ - SVG rendering and interaction
+ - HTML5 file upload
+ - PHPUnit
+ - Testem JavaScript test runner
 
 
 
@@ -82,15 +97,38 @@ Installation instructions
 9) You can see a demo video on the /Video folder and or online at:
    http://crossover_video.ip1.cc
 
-Running Tests
--------------
 
-You can run the tests on Linux with the following command:
+
+Running PHP Tests
+-----------------
+
+You can run the PHP tests on Linux with the following command:
 
     ./vendor/bin/phpunit
 
 (*) Please run the tests with a seeded database. In the a real project
     the tests should use a different database and seed it themselves but
     time constraint did not gave room to evolve in that direction.
+
+
+
+Running Angular Tests
+---------------------
+
+You can run the Angular tests on Linux by following this instructions:
+
+    sudo apt-get install npm
+    sudo npm install -g testem
+
+From the project root ('crossover' folder) run:
+
+    testem
+
+You will be prompted to access an URL with your browser.  Open that URL and run the tests.
+
+
+
+
+
 
 
