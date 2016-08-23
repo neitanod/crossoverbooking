@@ -32,7 +32,7 @@
              console.log('ERROR');
              console.log(response);
          });
-         setTimeout($scope.highlight);
+         setTimeout($scope.highlight,1000);
     };
 
     $scope.highlight = function(){
