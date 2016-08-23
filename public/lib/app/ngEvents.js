@@ -33,7 +33,7 @@
       $http({
         method: 'GET',
         data: {},
-        url: top.APP_PATH+'/API/events/list'
+        url: top.APP_PATH+'/API/event/list'
       }).then(
          function(response){
              console.log('SUCCESS');

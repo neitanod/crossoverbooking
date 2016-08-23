@@ -29,82 +29,110 @@
 
                             <div class="row">
 
-                            <form method="post" id="form-reservation" data-parsley-validate="">
-
                               <div class="form-group row row-spacing">
-                                <input id="f_s_id" type="hidden" name="s[id]" value="{{ $stand->id }}">
-                                <input id="csrf_token" type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <label for="f_c_name" class="col-xs-3 col-form-label">Company name</label>
-                                <div class="col-xs-9">
-                                  <input id="f_c_name" type="text" name="c[name]" value="" class="form-control" required="">
-                                </div>
-                              </div>
-                              <div class="form-group row">
                                 <label for="f_c_logo" class="col-xs-3 col-form-label">Company logo</label>
                                 <div class="col-xs-9">
-                                  <input id="f_c_logo" type="hidden" name="c[logo]" value="" class="form-control">
+                                  <input id="f_c_logo" type="text" class="form-control hidden" ng-model="res.company_logo">
+                                  <div id="has_logo" style="display: none">
+                                    <img data-src="{{ URL::to('/pics/company/full/800x600') }}/" style="max-width: 300px">
+                                    <span class="btn btn-danger" onclick="company_logo_reset()">Change</span>
+                                  </div>
+                                  @include('single_file_uploader',['id'=>'logo', 'target_uri'=>'/upload/companylogo', 'accept'=>'image/jpeg,image/png'])
+                                </div>
+                              </div>
 
-                                  @require('file_uploader')
+                            <form method="post" id="form-reservation">
 
+                              <div class="form-group row row-spacing">
+                                <input id="f_s_id" type="hidden" ng-model="res.stand_id_internal" value="{{ $stand->id }}">
+                                <label for="f_c_name" class="col-xs-3 col-form-label">Company name</label>
+                                <div class="col-xs-9">
+                                  <input id="f_c_name" type="text" ng-model="res.company_name" value="" class="form-control" required="">
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <label for="f_c_admin_name" class="col-xs-3 col-form-label">Contact person's name</label>
                                 <div class="col-xs-9">
-                                  <input id="f_c_admin_name" type="text" name="c[admin_name]" value="" class="form-control">
+                                  <input id="f_c_admin_name" type="text" ng-model="res.admin_name" value="" class="form-control">
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <label for="f_c_admin_email" class="col-xs-3 col-form-label">Contact person's email</label>
                                 <div class="col-xs-9">
-                                  <input id="f_c_admin_email" type="email" name="c[admin_email]" value="" class="form-control">
+                                  <input id="f_c_admin_email" type="email" ng-model="res.admin_email" value="" class="form-control">
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <label for="f_c_phone" class="col-xs-3 col-form-label">Company's contact phone number</label>
                                 <div class="col-xs-9">
-                                  <input id="f_c_phone" type="text" name="c[phone]" value="" class="form-control">
+                                  <input id="f_c_phone" type="text" ng-model="res.phone" value="" class="form-control">
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <label for="f_c_email" class="col-xs-3 col-form-label">Company's contact email address</label>
                                 <div class="col-xs-9">
-                                  <input id="f_c_email" type="email" name="c[email]" value="" class="form-control">
+                                  <input id="f_c_email" type="email" ng-model="res.email" value="" class="form-control">
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <label for="f_c_website" class="col-xs-3 col-form-label">Company's Website URL</label>
                                 <div class="col-xs-9">
-                                  <input id="f_c_website" type="text" name="c[website]" value="" class="form-control">
+                                  <input id="f_c_website" type="text" ng-model="res.website" value="" class="form-control">
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <label for="f_c_facebook" class="col-xs-3 col-form-label">Company's Facebook account</label>
                                 <div class="col-xs-9">
-                                  <input id="f_c_facebook" type="text" name="c[facebook]" value="" class="form-control">
+                                  <input id="f_c_facebook" type="text" ng-model="res.facebook" value="" class="form-control">
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <label for="f_c_twitter" class="col-xs-3 col-form-label">Company's Twitter account</label>
                                 <div class="col-xs-9">
-                                  <input id="f_c_twitter" type="text" name="c[twitter]" value="" class="form-control">
+                                  <input id="f_c_twitter" type="text" ng-model="res.twitter" value="" class="form-control">
                                 </div>
                               </div>
 
 
-                              <div class="form-group row">
+
+                            </form>
+
+                              <div class="form-group row row-spacing">
                                 <label for="f_c_twitter" class="col-xs-3 col-form-label">Marketing documents</label>
                                 <div class="col-xs-9">
-                                  @require('file_uploader')
-                                <span class="btn btn-primary">Add a document</span>
+                                  <div class="row row-spacing" ng-repeat='doc in res.documents'>
+                                    <div class="col col-xs-12">
+                                      <label>Document Title: </label>
+                                    </div>
+                                    <div class="col col-xs-12 row row-spacing">
+                                      <div class="col col-xs-8">
+                                        <input type='text' ng-model="doc.title" class="form-control">
+                                      </div>
+                                      <div class="col col-xs-2">
+                                        <a class="btn btn-primary" href="{{ URL::to('/documents/') }}/{|doc.filename|}" download>
+                                          <i class="fa fa-file"></i> file
+                                        </a>
+                                      </div>
+                                      <div class="col col-xs-2">
+                                        <span class="btn btn-danger">
+                                          <i class="fa fa-cross"></i> delete
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-xs-12 row-spacing" ng-show="show_doc_uploader">
+                                    @include('single_file_uploader',['id'=>'doc', 'target_uri'=>'/upload/document', 'accept2'=>'application/pdf,image/jpeg,image/png'])
+                                  </div>
+                                </div>
+                                <div class="col-xs-12 col-offset-3 row-spacing">
+                                <span class="btn btn-primary pull-right" ng-click="show_doc_uploader = true">Add a marketing document</span>
                                 </div>
                               </div>
 
-                              <div class="form-group row">
+                              <div class="form-group row row-spacing">
                                 <span class='btn btn-primary btn-lg btn-large pull-right' ng-click="makeReservation()">Confirm reservation</span>
                               </div>
 
-                            </form>
                             </div>
 
                             @endif
@@ -120,5 +148,32 @@
 
 @section('content-js')
 <script src="{{ asset('lib/app/ngBookStand.js') }}"></script>
-<script src="{{ asset('lib/parsley-2.4.4/parsley.min.js') }}"></script>
+<script src="{{ asset('lib/single-bootstrap-uploader/SingleBootstrapUploader.js') }}"></script>
+<script>
+function company_logo(filename){
+  $('#has_logo img').attr({'src':
+    $('#has_logo img').attr('data-src')+filename
+  });
+  $('#has_logo').show();
+  $('#f_c_logo').val(filename).change();
+  $('#logo').hide();
+};
+function company_logo_reset(){
+  top.sbup_logo.reset();
+  $('#f_c_logo').val("");
+  $('#has_logo').hide();
+  $('#logo').show();
+};
+$(function(){
+  top.sbup_logo = new SingleBootstrapUploader(
+    {
+      'element': '#logo',
+      // 'cancel': function(){ /* */ },
+      'success': function(data){ company_logo(data.data.filename);},
+      'error': function(data){ console.log("ERROR callback called"); console.log(data);},
+      'csrf_token': $('meta[name="csrf-token"]').attr('content')
+    }
+  );
+});
+</script>
 @endsection

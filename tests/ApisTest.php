@@ -13,7 +13,7 @@ class ApisTest extends TestCase
      */
     public function testEventsList()
     {
-        $this->visit('/API/events/list')
+        $this->visit('/API/event/list')
              ->see('{"events":');
     }
 

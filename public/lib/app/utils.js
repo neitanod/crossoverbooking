@@ -140,4 +140,18 @@ function scrollToElement(elm, delay){
       scrollTop: $elm.offset().top
   }, delay);
 }
+
+function getCookie(name) {
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + name + "=");
+  if (parts.length == 2) return parts.pop().split(";").shift();
+}
+
+function getStandIdInternal(){
+  return top.STAND_ID_INTERNAL;
+}
+
+function getEventId(){
+  return top.EVENT_ID;
+}
 /* */
