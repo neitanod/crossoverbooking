@@ -50,14 +50,18 @@
           function(){ /* console.log($(this).attr('data-id')); */ })
           .on('click', '.status-available',
           function(){
+            $("#stand-details").hide();
             $scope.selected = $scope.stands[$(this).attr('data-id')];
             $scope.$apply();
+            $("#stand-details").fadeIn();
             scrollToElement("#stand-details");
           })
           .on('click', '.status-reserved',
           function(){
+            $("#stand-details").hide();
             $scope.selected = $scope.stands[$(this).attr('data-id')];
             $scope.$apply();
+            $("#stand-details").fadeIn();
             scrollToElement("#stand-details");
           })
     };
