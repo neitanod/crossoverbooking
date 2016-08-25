@@ -102,7 +102,7 @@ class DatabaseSeeder extends Seeder
       ]);
 
       // Bulk
-      for($i = 1; $i <47; $i++) {
+      for($i = 1; $i <57; $i++) {
         $rand_status = (rand(0,1)>0?'available':'reserved');
         $rand_company_id = ($rand_status == 'reserved'? rand(1,4): 0);
         DB::table('stands')->insert([
@@ -144,7 +144,7 @@ class DatabaseSeeder extends Seeder
       ]);
 
       // Bulk
-      for($i = 1; $i <47; $i++) {
+      for($i = 1; $i <57; $i++) {
         $rand_status = (rand(0,1)>0?'available':'reserved');
         $rand_company_id = ($rand_status == 'reserved'? rand(1,4): 0);
         DB::table('stands')->insert([

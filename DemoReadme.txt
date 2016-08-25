@@ -16,4 +16,4 @@ Demo Video
 
 You can see a demo video on the /Video folder, or online at:
 
-   http://crossover_video.ip1.cc
+   http://crossovervideo.ip1.cc
