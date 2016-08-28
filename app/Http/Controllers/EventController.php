@@ -34,10 +34,20 @@ class EventController extends Controller
 
     public function book($event_id, $stand_id_internal)
     {
-        $event = Event::find($event_id)->first();
-        $venue = Venue::find($event->venue_id)->first();
-        $venue_map = VenueMap::where(['event_id'=>$event_id])->first();
+        $events = Event::find($event_id);
+        if(!$events) return view('errors.404');
+        $event = $events->first();
+        if(!$event) return view('errors.404');
+        $venues = Venue::find($event->venue_id);
+        if(!$venues) return view('errors.404');
+        $venue = $venues->first();
+        if(!$venue) return view('errors.404');
+        $venue_maps = VenueMap::where(['event_id'=>$event_id]);
+        if(!$venue_maps) return view('errors.404');
+        $venue_map = $venue_maps->first();
+        if(!$venue_map) return view('errors.404');
         $stand = StandRepository::findByInternalId($venue_map->id, $stand_id_internal);
+        if(!$stand) return view('errors.404');
         return view('book',
           [
             'event'=>$event,

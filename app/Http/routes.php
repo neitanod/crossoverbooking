@@ -25,8 +25,8 @@ Route::get('event/{id}',                            'EventController@event');
 Route::get('stand/{event_id}/{stand_id_internal}',  'EventController@book');
 
 Route::get( 'API/event/list',            'API\EventsController@index');
-Route::get( 'API/event/{id}',            'API\EventsController@event');
 Route::post('API/event/reserve',         'API\EventsController@reserve');
+Route::get( 'API/event/{id}',            'API\EventsController@event')->where('id', '[0-9]+');
 
 // Same controller for every upload
 Route::post('upload/{target}',                      'UploadController@receive');

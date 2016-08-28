@@ -21,8 +21,7 @@ class EventRepository
           ->leftJoin('venues','events.venue_id','=','venues.id')
           ->leftJoin('venue_maps','venue_maps.event_id','=','events.id')
           ->get();
-        return (array)$event[0];
+        return empty($event[0])?false:(array)$event[0];
     }
-
 
 }

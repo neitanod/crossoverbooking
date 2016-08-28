@@ -75,9 +75,9 @@ class EventsController extends Controller
       $company->admin_email = $reservation['admin_email'];
       $company->phone = $reservation['phone'];
       $company->email = $reservation['email'];
-      $company->website = $reservation['website'];
-      $company->facebook = $reservation['facebook'];
-      $company->twitter = $reservation['twitter'];
+      $company->website = empty($reservation['website'])?'':$reservation['website'];
+      $company->facebook = empty($reservation['facebook'])?'':$reservation['facebook'];
+      $company->twitter = empty($reservation['twitter'])?'':$reservation['twitter'];
       $company->save();
 
       $documents = empty($reservation['documents'])?[]:$reservation['documents'];

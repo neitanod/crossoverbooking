@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\Repositories\EventRepository;
 
 class SendEmailReport extends Command
 {
@@ -28,6 +29,9 @@ class SendEmailReport extends Command
     public function handle()
     {
         //TODO: Send emails here;
+
+        $alerts = EventRepository::getCaca();
+
         $this->comment(PHP_EOL.'Emails sent'.PHP_EOL);
     }
 }

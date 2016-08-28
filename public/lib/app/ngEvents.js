@@ -43,7 +43,7 @@
          },
          function(response){
              console.log('ERROR');
-             console.log(response);
+             console.log(response.status);
          });
     }
     $scope.init();

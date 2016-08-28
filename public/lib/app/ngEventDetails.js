@@ -29,8 +29,7 @@
              setTimeout(function(){$scope.showStands();});
          },
          function(response){
-             console.log('ERROR');
-             console.log(response);
+             top.location.href=top.APP_PATH+'/'+response.status;
          });
          var inter = setInterval($scope.highlight, 500);
          setTimeout(function(){clearInterval(inter);},10000);

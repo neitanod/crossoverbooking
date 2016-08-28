@@ -98,8 +98,7 @@
              top.location.href = getAppPath()+"/event/"+getEventId()+"#"+getStandIdInternal();
          },
          function(response){
-             console.log('ERROR');
-             console.log(response);
+             top.location.href=top.APP_PATH+'/'+response.status;
          });
     }
 
