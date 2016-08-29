@@ -6,3 +6,5 @@ Homestead.json
 .env
 /storage/framework/sessions/*
 /storage/framework/views/*
+/public/pics/company/full/800x600/8bfd053ecc2d3005dabe2a38b8ddcbfa.jpeg
+/public/pics/company/full/800x600/9fb887e040453c3fd3f6a8b4f53f0976.jpeg
