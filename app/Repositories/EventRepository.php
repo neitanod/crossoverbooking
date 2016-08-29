@@ -24,4 +24,14 @@ class EventRepository
         return empty($event[0])?[]:(array)$event[0];
     }
 
+    public static function getRecentEvents($date = null)
+    {
+        $date = is_null($date)?date('Y-m-d',strtotime('yesterday')):$date;
+        $events = DB::table('events')->select('companies.*','events.name AS event_name')->where('events.end_date',$date)
+          ->leftJoin('venue_maps','venue_maps.event_id','=','events.id')
+          ->leftJoin('stands','stands.venue_map_id','=','venue_maps.id')
+          ->leftJoin('companies','companies.id','=','stands.company_id')
+          ->get();
+        return $events;
+    }
 }

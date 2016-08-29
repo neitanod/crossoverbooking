@@ -28,9 +28,25 @@ class SendEmailReport extends Command
      */
     public function handle()
     {
-        //TODO: Send emails here;
 
-        $alerts = EventRepository::getCaca();
+        $alerts = EventRepository::getRecentEvents();
+        foreach($alerts as $alert){
+            if(!empty($alert->admin_name)){
+                $this->comment('Alert sent to '.$alert->admin_name.' ('.$alert->name.')');
+                //TODO: Send emails here;
+                //
+                // $mailer = $this->getMailer();
+                // $this->message = Swift_Message::newInstance();
+                // $this->message
+                //           ->setFrom(array('system@crossover.ip1.cc' => 'system@crossover.ip1.cc'))
+                //           ->setTo(array($alert->admin_name => $alert->admin_email ))
+                //           ->setSubject('Your event has concluded')
+                //           ->setBody($this->getPartial('body_txt',  $data))
+                //           ->addPart($this->getPartial('body_html', $data), "text/html");
+                //
+                // $result = $mailer->send($this->message);
+            }
+        }
 
         $this->comment(PHP_EOL.'Emails sent'.PHP_EOL);
     }
